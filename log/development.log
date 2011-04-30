@@ -1,0 +1,3455 @@
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:24:19 -0600
+
+NameError (undefined local variable or method `companies_path' for #<ActionDispatch::Routing::Mapper:0x00000101556ca0>):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:24:20 -0600
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:24:35 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+SQLite3::SQLException: no such table: companies: SELECT "companies".* FROM "companies"
+Completed   in 90ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: companies: SELECT "companies".* FROM "companies"):
+  app/controllers/company_controller.rb:4:in `index'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateCompanies (20110430170529)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "founded" integer, "address" varchar(255), "phone" varchar(255), "ceo" varchar(255), "cfo" varchar(255), "president" varchar(255), "website" varchar(255), "headcount" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110430170529')
+Migrating to CreateFinancials (20110430171006)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "financials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "revenue" integer, "cogs" integer, "sga" integer, "other_expense" integer, "other_income" integer, "interest_income" integer, "interest_expense" integer, "current_assets" integer, "other_assets" integer, "current_liabilties" integer, "other_liabilities" integer, "common_stock" integer, "retained_earnings" integer, "cash_in_ops" integer, "cash_out_ops" integer, "cash_investing" integer, "cash_financing" integer, "income_commentary" text, "balance_commentary" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110430171006')
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("companies")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("financials")[0m
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:25:27 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.5ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:27:37 -0600
+
+ArgumentError (missing :action):
+  config/routes.rb:7:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:27:49 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:30:44 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:31:00 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:35:13 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:35:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:35:41 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:36:01 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:36:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:36:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:36:38 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:37:07 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:38:00 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:38:06 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:38:13 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:38:57 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:39:06 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:39:30 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:39:52 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:39:59 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:07 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:20 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:27 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:31 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:35 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:40:51 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:41:01 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:41:28 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:41:59 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:18 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:32 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:41 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:42:51 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:43:04 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:43:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:43:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:43:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:43:56 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:44:12 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:44:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:44:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:44:31 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:45:05 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:45:30 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:45:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:46:06 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:46:48 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:47:03 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:47:09 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:47:15 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:47:22 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:48:22 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:48:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:48:33 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:48:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:48:53 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:49:05 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:49:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:49:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:49:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:49:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:49:54 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:50:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:50:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:50:31 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:50:39 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:50:53 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:51:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:51:19 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:51:34 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:51:44 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:51:51 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:52:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:52:29 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:52:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:52:41 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:25 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:30 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:35 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:48 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:52 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:53:57 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:54:09 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:54:12 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:54:38 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:54:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:54:52 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:55:33 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:55:50 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:55:53 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:55:55 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:07 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:12 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:15 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:19 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:25 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:29 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:56:56 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:57:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:57:08 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:57:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:57:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:58:29 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 11:58:33 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:00:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2011-04-30 12:00:22 -0600
+
+AbstractController::ActionNotFound (The action 'index' could not be found for PagesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:00:24 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2011-04-30 12:00:34 -0600
+
+AbstractController::ActionNotFound (The action 'index' could not be found for PagesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:00:37 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:00:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:00:48 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:00:52 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:01:17 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (36.2ms)
+Completed   in 40ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x0000010303c358>:0x00000103036638>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages#commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___1265232545559889199_2172744300__2540717302961203332'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:01:25 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (8.4ms)
+Completed   in 22ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x0000010135e8a8>:0x00000101344930>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___1265232545559889199_2156319900__2540717302961203332'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:02:01 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (7.2ms)
+Completed   in 11ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x00000101566d08>:0x00000101564530>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___1265232545559889199_2158691500__2540717302961203332'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:02:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (21.1ms)
+Completed   in 25ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x000001028a2b38>:0x000001028a0c70>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__350888793841511560_2168778500_282797453960257058'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:02:18 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (20.9ms)
+Completed   in 44ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x00000100dcc728>:0x00000100dbe1c8>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__350888793841511560_2154647200_282797453960257058'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:02:48 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (13.0ms)
+Completed   in 19ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x000001013457e0>:0x00000101342ce8>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__350888793841511560_2157576380_282797453960257058'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:02:54 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (8.1ms)
+Completed   in 12ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x000001029b4260>:0x000001029b19c0>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__350888793841511560_2169337060_282797453960257058'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:10 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (22.3ms)
+Completed   in 27ms
+
+ActionView::Template::Error (undefined method `linkt_to' for #<#<Class:0x00000103106b30>:0x000001031048d0>):
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', 'pages/dashboard' %></li>
+    14: 		<li>Financials</li>
+    15: 		<li><%= linkt_to 'Commentary', 'pages/commentary' %></li>
+    16: 	</ul>
+    17: </div>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___4429440506536104622_2173175820__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:04:24 -0600
+
+AbstractController::ActionNotFound (The action 'show' could not be found for PagesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:25 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2011-04-30 12:04:43 -0600
+
+AbstractController::ActionNotFound (The action 'index' could not be found for PagesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:55 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/commentary" for 127.0.0.1 at 2011-04-30 12:04:56 -0600
+
+ActionController::RoutingError (No route matches "/commentary"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:04:57 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:05:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:05:03 -0600
+
+AbstractController::ActionNotFound (The action 'show' could not be found for PagesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:05:04 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:05:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:05:22 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:05:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:05:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2011-04-30 12:05:44 -0600
+
+ActionController::RoutingError (No route matches "/pages"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:05:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:06:41 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:06:43 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:06:55 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:06:57 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:06:58 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:07:16 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:07:22 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:07:43 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:07:50 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:08:16 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:09:08 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:09:10 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:09:12 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:09:42 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:09:50 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:10:02 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:10:21 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:10:30 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:12:17 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:12:23 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:12:29 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:13:00 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:13:06 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:13:46 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (8.2ms)
+Completed   in 12ms
+
+ActionView::Template::Error (undefined local variable or method `financials_path' for #<#<Class:0x00000103087678>:0x000001030843d8>):
+    11: <div class="header">
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    14: 		<li><%= link_to 'Financials', financials_path %></li>
+    15: 		<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    16: 	</ul>
+    17: </div>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___4429440506536104622_2172913360__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:18:01 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (7.9ms)
+Completed   in 12ms
+
+ActionView::Template::Error (undefined local variable or method `financials_path' for #<#<Class:0x00000103144020>:0x00000103140470>):
+    11: <div class="header">
+    12: 	<ul>
+    13: 		<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    14: 		<li><%= link_to 'Financials', financials_path %></li>
+    15: 		<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    16: 	</ul>
+    17: </div>
+  app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___4429440506536104622_2173297480__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:18:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:18:55 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:18:56 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:19:01 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:19:03 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:19:27 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:19:30 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:31 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/financials" for 127.0.0.1 at 2011-04-30 12:19:33 -0600
+  Processing by FinancialsController#index as HTML
+  [1m[36mFinancial Load (0.5ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 84ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:35 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:19:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:19:37 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:38 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:40 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:19:44 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:44 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/financials" for 127.0.0.1 at 2011-04-30 12:19:45 -0600
+  Processing by FinancialsController#index as HTML
+  [1m[35mFinancial Load (0.4ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:45 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:19:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 12:19:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:19:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:19:47 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:20:24 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:20:41 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:20:48 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:21:17 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:21:37 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:21:46 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:22:00 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:22:03 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:22:08 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:22:11 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:22:29 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:22:38 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:23:35 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:23:36 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:23:42 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 12:23:43 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/financials" for 127.0.0.1 at 2011-04-30 12:23:44 -0600
+  Processing by FinancialsController#index as HTML
+  [1m[36mFinancial Load (0.4ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:23:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:30:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:32:17 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:32:55 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:33:14 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:34:12 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:36:34 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/nav_background.png" for 127.0.0.1 at 2011-04-30 12:36:35 -0600
+
+ActionController::RoutingError (No route matches "/stylesheets/nav_background.png"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:36:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/nav_background.png" for 127.0.0.1 at 2011-04-30 12:36:36 -0600
+
+ActionController::RoutingError (No route matches "/stylesheets/nav_background.png"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (40.9ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:37:25 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/nav_background.png" for 127.0.0.1 at 2011-04-30 12:37:25 -0600
+
+ActionController::RoutingError (No route matches "/stylesheets/nav_background.png"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:39:29 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:40:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:41:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:42:03 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:42:43 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:43:32 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:43:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:47:51 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:48:04 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:48:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:48:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:48:27 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:49:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/nav_button_background.png" for 127.0.0.1 at 2011-04-30 12:49:03 -0600
+
+ActionController::RoutingError (No route matches "/nav_button_background.png"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:49:19 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:50:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:51:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:52:13 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:56:40 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:57:56 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:58:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:58:41 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:59:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:59:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:59:17 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 12:59:24 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:00:14 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:00:32 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:00:39 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:00:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:00:55 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:01:16 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:01:31 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:02:04 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:03:05 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:03:11 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:03:20 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:03:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:03:59 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:04:17 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:04:25 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:04:40 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:04:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:05:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:05:58 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:07:18 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:07:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:07:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:07:52 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:08:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:09:48 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:10:14 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:10:24 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:10:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:10:47 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:10:52 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:12:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:13:07 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:13:12 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:13:59 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:19:11 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:19:13 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:19:14 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/financials" for 127.0.0.1 at 2011-04-30 13:19:15 -0600
+  Processing by FinancialsController#index as HTML
+  [1m[35mFinancial Load (0.4ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 22ms (Views: 15.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:19:17 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:20:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:20:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (14.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateCompanies (20110430170529)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "founded" integer, "address" varchar(255), "phone" varchar(255), "ceo" varchar(255), "cfo" varchar(255), "president" varchar(255), "website" varchar(255), "headcount" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110430170529')
+Migrating to CreateFinancials (20110430171006)
+  [1m[36mSQL (7.0ms)[0m  [1mCREATE TABLE "financials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "revenue" integer, "cogs" integer, "sga" integer, "other_expense" integer, "other_income" integer, "interest_income" integer, "interest_expense" integer, "current_assets" integer, "other_assets" integer, "current_liabilties" integer, "other_liabilities" integer, "common_stock" integer, "retained_earnings" integer, "cash_in_ops" integer, "cash_out_ops" integer, "cash_investing" integer, "cash_financing" integer, "income_commentary" text, "balance_commentary" text, "period" date, "company_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110430171006')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("companies")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("financials")[0m
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:22:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:22:56 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:23:22 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:23:24 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:23:26 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:24:02 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:24:03 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:24:04 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:24:08 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:24:33 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:24:36 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:24:37 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:24:38 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:24:39 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 15ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:25:18 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:25:20 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:25:21 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:25:32 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:25:33 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:25:34 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:25:35 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:25:39 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:25:41 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:25:43 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:25:58 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:25:59 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 13:26:01 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:26:02 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:26:11 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.5ms)
+Completed   in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"company"}):
+    13: 		<div class="header">
+    14: 			<ul>
+    15: 				<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    16: 				<li><%= link_to 'Companies', company_path %></li>
+    17: 				<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    18: 			</ul>
+    19: 		</div>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___4429440506536104622_2173863500__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:26:15 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed   in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"company"}):
+    13: 		<div class="header">
+    14: 			<ul>
+    15: 				<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    16: 				<li><%= link_to 'Companies', company_path %></li>
+    17: 				<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    18: 			</ul>
+    19: 		</div>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___4429440506536104622_2161024600__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:26:28 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/company" for 127.0.0.1 at 2011-04-30 13:26:30 -0600
+
+ActionController::RoutingError (No route matches "/pages/company"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:26:32 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:27:18 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:27:19 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:27:42 -0600
+
+ActionController::RoutingError (No route matches "/company"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:27:48 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 23ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:27:55 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:27:57 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:27:58 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:27:59 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:28:24 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:30:00 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:30:04 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:30:48 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:33:54 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:35:20 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:35:25 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:35:50 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:35:54 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:35:56 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (10.0ms)
+Rendered company/new.html.erb within layouts/application (11.7ms)
+Completed   in 60ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2174623900__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2174639020__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:36:20 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (8.2ms)
+Completed   in 21ms
+
+ActionView::Template::Error (undefined local variable or method `create_new_company_path' for #<#<Class:0x00000103003878>:0x00000103000628>):
+    19: </table>
+    20: 
+    21: <br />
+    22: <%= link_to "Add New Company", create_new_company_path %>
+  app/views/company/index.html.erb:22:in `_app_views_company_index_html_erb__2240993273364144958_2161493460__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:36:22 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (7.4ms)
+Completed   in 20ms
+
+ActionView::Template::Error (undefined local variable or method `create_new_company_path' for #<#<Class:0x000001032f3b28>:0x000001032f1b70>):
+    19: </table>
+    20: 
+    21: <br />
+    22: <%= link_to "Add New Company", create_new_company_path %>
+  app/views/company/index.html.erb:22:in `_app_views_company_index_html_erb__2240993273364144958_2174190260__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:36:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:36:25 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (15.0ms)
+Completed   in 27ms
+
+ActionView::Template::Error (undefined local variable or method `create_new_company_path' for #<#<Class:0x00000100f5e4d8>:0x00000100f5b490>):
+    19: </table>
+    20: 
+    21: <br />
+    22: <%= link_to "Add New Company", create_new_company_path %>
+  app/views/company/index.html.erb:22:in `_app_views_company_index_html_erb__2240993273364144958_2155529960__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:36:32 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (6.5ms)
+Completed   in 24ms
+
+ActionView::Template::Error (undefined local variable or method `create_company_path' for #<#<Class:0x000001031755a8>:0x00000103173348>):
+    19: </table>
+    20: 
+    21: <br />
+    22: <%= link_to "Add New Company", create_company_path %>
+  app/views/company/index.html.erb:22:in `_app_views_company_index_html_erb__2240993273364144958_2173406140__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:36:43 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (6.7ms)
+Completed   in 21ms
+
+ActionView::Template::Error (undefined local variable or method `add_new_company_path' for #<#<Class:0x00000100f41838>:0x00000100f399f8>):
+    19: </table>
+    20: 
+    21: <br />
+    22: <%= link_to "Add New Company", add_new_company_path %>
+  app/views/company/index.html.erb:22:in `_app_views_company_index_html_erb__2240993273364144958_2155460860__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:36:48 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (13.7ms)
+Completed   in 26ms
+
+ActionView::Template::Error (undefined local variable or method `add_company_path' for #<#<Class:0x00000103166008>:0x00000103163448>):
+    19: </table>
+    20: 
+    21: <br />
+    22: <%= link_to "Add New Company", add_company_path %>
+  app/views/company/index.html.erb:22:in `_app_views_company_index_html_erb__2240993273364144958_2173372240__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:37:14 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:37:16 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (7.8ms)
+Rendered company/new.html.erb within layouts/application (9.4ms)
+Completed   in 26ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2173299440__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2173320240__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:37:18 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 49ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:37:31 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (0.6ms)
+Rendered company/new.html.erb within layouts/application (2.1ms)
+Completed   in 18ms
+
+ActionView::Template::Error (Missing block):
+    1: <%= form_for(@company).each do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2173357200__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2173374420__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:37:44 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (0.7ms)
+Rendered company/new.html.erb within layouts/application (2.1ms)
+Completed   in 25ms
+
+ActionView::Template::Error (Missing block):
+    1: <% form_for(@company).each do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2153625560__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2153737420__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:37:55 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (0.6ms)
+Rendered company/new.html.erb within layouts/application (2.4ms)
+Completed   in 19ms
+
+ActionView::Template::Error (Missing block):
+    1: <%= form_for(@company).each do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2173074620__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2173099300__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.9ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:39:00 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (8.8ms)
+Rendered company/new.html.erb within layouts/application (10.3ms)
+Completed   in 59ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2174540540__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2174574240__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:39:24 -0600
+
+ActionController::RoutingError (No route matches "/company/new"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:39:30 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (4.2ms)
+Completed   in 40ms
+
+ActionView::Template::Error (No route matches {:controller=>"company"}):
+    13: 		<div class="header">
+    14: 			<ul>
+    15: 				<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    16: 				<li><%= link_to 'Companies', company_index_path %></li>
+    17: 				<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    18: 			</ul>
+    19: 		</div>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___4429440506536104622_2155784440__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:39:31 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed   in 7ms
+
+ActionView::Template::Error (No route matches {:controller=>"company"}):
+    13: 		<div class="header">
+    14: 			<ul>
+    15: 				<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    16: 				<li><%= link_to 'Companies', company_index_path %></li>
+    17: 				<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    18: 			</ul>
+    19: 		</div>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___4429440506536104622_2173223900__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:39:41 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:39:43 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2011-04-30 13:39:44 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:39:47 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:39:49 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:39:51 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:40:18 -0600
+
+ActionController::RoutingError (No route matches "/company"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:40:31 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 70ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2011-04-30 13:41:01 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:41:04 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+  [1m[36mCompany Load (1.6ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "companies" ("name", "founded", "address", "phone", "ceo", "cfo", "president", "website", "headcount", "created_at", "updated_at") VALUES ('CradlePoint', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2011-04-30 19:41:48.373531', '2011-04-30 19:41:48.373531')[0m
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:41:50 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (1.3ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (60.4ms)
+Completed   in 81ms
+
+ActionView::Template::Error (undefined local variable or method `destroy' for #<#<Class:0x000001009a37c8>:0x00000100966990>):
+    13: 		<td><%= link_to company.name, company %></td>
+    14: 		<td><%= company.ceo %></td>
+    15: 		<td><%= link_to 'Edit', edit_company_path(company) %>
+    16: 		<td><%= link_to 'Destroy', destroy, :notice => "Are you sure?", :method => :delete%>
+    17: 	</tr>
+    18: 	<% end %>
+    19: </table>
+  app/views/company/index.html.erb:16:in `block in _app_views_company_index_html_erb__2240993273364144958_2152372520__2942097702397392669'
+  app/views/company/index.html.erb:11:in `each'
+  app/views/company/index.html.erb:11:in `_app_views_company_index_html_erb__2240993273364144958_2152372520__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:44:03 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (2.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 80ms (Views: 69.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/companies/1/edit" for 127.0.0.1 at 2011-04-30 13:44:06 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:44:08 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 46ms (Views: 35.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2011-04-30 13:44:11 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:44:12 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.6ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 33ms (Views: 22.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2011-04-30 13:44:14 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:44:17 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (1.5ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 66ms (Views: 55.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/companies/new" for 127.0.0.1 at 2011-04-30 13:44:33 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:44:36 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.3ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 33ms (Views: 22.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:45:25 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (33.5ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 62ms (Views: 20.6ms | ActiveRecord: 33.5ms)
+
+
+Started GET "/companies/1/edit" for 127.0.0.1 at 2011-04-30 13:45:27 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:45:29 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 71ms (Views: 58.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/companies/1" for 127.0.0.1 at 2011-04-30 13:45:44 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:45:45 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/1/edit" for 127.0.0.1 at 2011-04-30 13:46:25 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:46:27 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 32ms (Views: 22.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:47:42 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.0ms)
+Completed   in 7ms
+
+ActionView::Template::Error (No route matches {:controller=>"company"}):
+    13: 		<div class="header">
+    14: 			<ul>
+    15: 				<li><%= link_to 'Dashboard', pages_dashboard_path %></li>
+    16: 				<li><%= link_to 'Companies', company_index_path %></li>
+    17: 				<li><%= link_to 'Commentary', pages_commentary_path %></li>
+    18: 			</ul>
+    19: 		</div>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___4429440506536104622_2155500960__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:47:54 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:48:03 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (8.0ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 89ms (Views: 52.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/company/1" for 127.0.0.1 at 2011-04-30 13:48:05 -0600
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+Rendered company/show.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 70ms (Views: 55.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:48:07 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.2ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 29ms (Views: 19.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/company/1/edit" for 127.0.0.1 at 2011-04-30 13:48:08 -0600
+  Processing by CompanyController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCompany Load (1.5ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+Completed   in 63ms
+
+NoMethodError (undefined method `authorize!' for #<CompanyController:0x00000100fcaf70>):
+  app/controllers/company_controller.rb:26:in `edit'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:48:11 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.6ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 41ms (Views: 22.3ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/company/1" for 127.0.0.1 at 2011-04-30 13:48:13 -0600
+  Processing by CompanyController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/VhL/WjoQubfvxYseKCv76LOLBbCH10/woTSBzNmq80=", "id"=>"1"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "companies" WHERE "companies"."id" = 1[0m
+Redirected to 
+Completed   in 62ms
+
+NoMethodError (undefined method `index_url' for #<CompanyController:0x00000100c56498>):
+  app/controllers/company_controller.rb:41:in `destroy'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:48:17 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:48:46 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 47ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:48:48 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (8.5ms)
+Rendered company/new.html.erb within layouts/application (10.2ms)
+Completed   in 27ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2172897940__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2172913240__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:03 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:04 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "companies" ("name", "founded", "address", "phone", "ceo", "cfo", "president", "website", "headcount", "created_at", "updated_at") VALUES ('CradlePoint', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2011-04-30 19:49:09.026529', '2011-04-30 19:49:09.026529')
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:12 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 64ms (Views: 54.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/company/2" for 127.0.0.1 at 2011-04-30 13:49:13 -0600
+  Processing by CompanyController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/VhL/WjoQubfvxYseKCv76LOLBbCH10/woTSBzNmq80=", "id"=>"2"}
+  [1m[36mCompany Load (7.3ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (2.1ms)[0m  DELETE FROM "companies" WHERE "companies"."id" = 2
+Completed   in 120ms
+
+ActionController::RoutingError (No route matches {:controller=>"companies"}):
+  app/controllers/company_controller.rb:41:in `destroy'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:15 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 23ms (Views: 7.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:16 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "companies" ("name", "founded", "address", "phone", "ceo", "cfo", "president", "website", "headcount", "created_at", "updated_at") VALUES ('CradlePoint', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2011-04-30 19:49:27.329965', '2011-04-30 19:49:27.329965')[0m
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:31 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.2ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 30ms (Views: 20.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/company/3" for 127.0.0.1 at 2011-04-30 13:49:33 -0600
+  Processing by CompanyController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/VhL/WjoQubfvxYseKCv76LOLBbCH10/woTSBzNmq80=", "id"=>"3"}
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "companies" WHERE "companies"."id" = 3[0m
+Completed   in 152ms
+
+ActionController::RoutingError (No route matches {:controller=>"company"}):
+  app/controllers/company_controller.rb:41:in `destroy'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:34 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 6.9ms | ActiveRecord: 1.9ms)
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "companies" ("name", "founded", "address", "phone", "ceo", "cfo", "president", "website", "headcount", "created_at", "updated_at") VALUES ('CradlePoint', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2011-04-30 19:49:43.590169', '2011-04-30 19:49:43.590169')
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:45 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (1.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 88ms (Views: 68.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/company/4" for 127.0.0.1 at 2011-04-30 13:49:47 -0600
+  Processing by CompanyController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/VhL/WjoQubfvxYseKCv76LOLBbCH10/woTSBzNmq80=", "id"=>"4"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 4 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "companies" WHERE "companies"."id" = 4[0m
+Redirected to http://localhost:3000/company
+Completed 302 Found in 59ms
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:49:47 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 7.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:50:10 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (8.1ms)
+Rendered company/new.html.erb within layouts/application (9.7ms)
+Completed   in 33ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2155570460__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2155605600__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:51:01 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:51:02 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:51:04 -0600
+  Processing by CompanyController#new as HTML
+Completed   in 24ms
+
+ActionView::MissingTemplate (Missing partial companies/company with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/Keller/rails_projects/tracker/app/views"):
+  app/controllers/company_controller.rb:13:in `new'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:51:14 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 24ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:52:55 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 48ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:52:57 -0600
+  Processing by CompanyController#new as HTML
+Completed   in 20ms
+
+ActionView::MissingTemplate (Missing partial companies/company with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/Keller/rails_projects/tracker/app/views"):
+  app/controllers/company_controller.rb:13:in `new'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:52:58 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 88ms (Views: 8.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:53:08 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:53:09 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (51.2ms)
+Rendered company/new.html.erb within layouts/application (52.7ms)
+Completed   in 70ms
+
+ActionView::Template::Error (undefined method `tags' for #<Company:0x00000100f53948>):
+    1: <% @company.tags.build %>
+    2: <%= form_for(@company) do |f| %>
+    3: 	<p>
+    4: 		<%= f.label :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2153738240__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2153834180__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:53:12 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:53:33 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:53:35 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (8.2ms)
+Rendered company/new.html.erb within layouts/application (9.8ms)
+Completed   in 26ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2173321700__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2173339140__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:54:00 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:54:02 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:54:03 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (15.3ms)
+Rendered company/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 75ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:54:05 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.5ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:54:15 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:54:16 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (41.6ms)
+Rendered company/new.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 62ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/companies" for 127.0.0.1 at 2011-04-30 13:54:27 -0600
+
+ActionController::RoutingError (uninitialized constant CompaniesController):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:54:32 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (10.1ms)
+Rendered company/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 31ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:54:43 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.6ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 45ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:55:43 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:55:45 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:55:46 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:56:14 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:56:16 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:56:33 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:56:36 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:56:37 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:58:49 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 13:58:51 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:58:52 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.7ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 13:58:54 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 47ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:58:54 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:58:55 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (8.8ms)
+Rendered company/new.html.erb within layouts/application (10.4ms)
+Completed   in 27ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2172675320__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2172695200__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:58:57 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 13:59:23 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:59:24 -0600
+  Processing by CompanyController#index as HTML
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered company/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/new" for 127.0.0.1 at 2011-04-30 13:59:26 -0600
+  Processing by CompanyController#new as HTML
+Rendered company/_form.html.erb (8.7ms)
+Rendered company/new.html.erb within layouts/application (10.3ms)
+Completed   in 30ms
+
+ActionView::Template::Error (No route matches {:controller=>"companies"}):
+    1: <%= form_for(@company) do |f| %>
+    2: 	<p>
+    3: 		<%= f.label :name %>
+    4: 		<%= f.text_field :name %>
+  app/views/company/_form.html.erb:1:in `_app_views_company__form_html_erb__193600382921559661_2172969340__2500252624659433205'
+  app/views/company/new.html.erb:3:in `_app_views_company_new_html_erb__4120839291075647712_2172994560__2942097702397392669'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/company" for 127.0.0.1 at 2011-04-30 13:59:27 -0600
+  Processing by CompanyController#index as HTML
+  [1m[36mCompany Load (0.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered company/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.5ms)

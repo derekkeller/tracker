@@ -1,0 +1,43 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  revenue: 1
+  cogs: 1
+  sga: 1
+  other_expense: 1
+  other_income: 1
+  interest_income: 1
+  interest_expense: 1
+  current_assets: 1
+  other_assets: 1
+  current_liabilties: 1
+  other_liabilities: 1
+  common_stock: 1
+  retained_earnings: 1
+  cash_in_ops: 1
+  cash_out_ops: 1
+  cash_investing: 1
+  cash_financing: 1
+  income_commentary: MyText
+  balance_commentary: MyText
+
+two:
+  revenue: 1
+  cogs: 1
+  sga: 1
+  other_expense: 1
+  other_income: 1
+  interest_income: 1
+  interest_expense: 1
+  current_assets: 1
+  other_assets: 1
+  current_liabilties: 1
+  other_liabilities: 1
+  common_stock: 1
+  retained_earnings: 1
+  cash_in_ops: 1
+  cash_out_ops: 1
+  cash_investing: 1
+  cash_financing: 1
+  income_commentary: MyText
+  balance_commentary: MyText

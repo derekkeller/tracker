@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  founded: 1
+  address: MyString
+  phone: MyString
+  ceo: MyString
+  cfo: MyString
+  president: MyString
+  website: MyString
+
+two:
+  name: MyString
+  founded: 1
+  address: MyString
+  phone: MyString
+  ceo: MyString
+  cfo: MyString
+  president: MyString
+  website: MyString
