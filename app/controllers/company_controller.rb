@@ -23,7 +23,6 @@ class CompanyController < ApplicationController
 
   def edit
     @company = Company.find(params[:id])
-    authorize! :update, @company    
   end
 
   def update
