@@ -4,13 +4,17 @@ class FinancialsController < ApplicationController
   end
 
   def new
+    @company = Company.find(params[:company_id])
     @financial = Financial.new
   end
 
   def create
+    @company = Company.find(params[:company_id])
+
     @financial = Financial.new(params[:financial])
+
     if @financial.save
-      redirect_to :show
+      redirect_to show_company_path(@company)
     else
       render :new
     end
@@ -26,7 +30,7 @@ class FinancialsController < ApplicationController
 
   def update
     @financial = Financial.find(params[:id])
-    if @findncial = Financial.update_attributes(params[:financial])
+    if @financial = Financial.update_attributes(params[:financial])
       redirect_to :show
     else
       render :edit

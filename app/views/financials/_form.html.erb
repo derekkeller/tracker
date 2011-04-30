@@ -1,0 +1,19 @@
+	<p>
+		<%= form.label :period %>
+		<%= form.date_select :period, :order => [:month, :year] %>
+	</p>
+	<p>
+		<%= form.label :revenue %>
+		<%= form.text_field :revenue %>
+	</p>
+	<p>
+		<%= form.label :cogs %>
+		<%= form.text_field :cogs %>
+	</p>
+	<p>
+		<%= form.label :income_commentary %>
+		<%= form.text_area :income_commentary %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>

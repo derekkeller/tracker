@@ -1,0 +1,23 @@
+<h1>Highway 12 Ventures Portfolio</h1>
+
+<table class='company_detail'>
+	<tr>
+		<th>Company</th>
+		<th>CEO</th>
+		<th></th>
+	</tr>
+	<% @company.each do |company| %>
+	<tr>
+		<td><%= link_to company.name, company %></td>
+		<td><%= company.ceo %></td>
+		<td><%= link_to "Edit", edit_company_path(company) %>
+			  <%= link_to "Destroy", company, :notice => "Are you sure?", :method => :delete %>
+		</td>
+
+	</tr>
+	<% end %>
+</table>
+
+<br />
+<%= link_to "Add new Company", new_company_path %>
+

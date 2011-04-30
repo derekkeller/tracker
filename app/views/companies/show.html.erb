@@ -1,0 +1,20 @@
+<h1>Company Detail | <%= @company.name %></h1>
+
+<table class='company_detail'>
+	<tr>
+		<th>Company</th>
+		<td><%= @company.name %></td>
+	</tr>
+	<tr>
+		<th>CEO</th>
+		<td><%= @company.ceo %></td>
+	</tr>
+</table>
+
+<br />
+<%= link_to 'Add Financial Data', new_company_financial_path(@company) %><br />
+
+
+<br />
+<%= link_to 'Edit', edit_company_path(@company) %><br />
+<%= link_to 'Back to Companies', companies_path %>

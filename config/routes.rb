@@ -1,8 +1,11 @@
 Tracker::Application.routes.draw do
 
-  resources :company
+  resources :companies
+  resources :financials
 
-  resources :financial
+  resources :companies do
+    resources :financials
+  end
 
   get "pages/dashboard"
   get "pages/commentary"
