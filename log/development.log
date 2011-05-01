@@ -5919,3 +5919,2432 @@ Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:19:48 -0600
   [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
 Rendered companies/show.html.erb within layouts/application (17.6ms)
 Completed 200 OK in 34ms (Views: 21.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:21:40 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 62ms (Views: 19.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:22:13 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.9ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 65ms (Views: 54.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 17:22:16 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 31ms (Views: 18.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/3/edit" for 127.0.0.1 at 2011-04-30 17:22:19 -0600
+  Processing by CompaniesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_companies__form_html_erb__3703716690893434433_2163608600__1877949860056337981 at /Users/Keller/rails_projects/tracker/app/views/companies/_form.html.erb:1)
+Rendered companies/_form.html.erb (16.7ms)
+Rendered companies/edit.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 67ms (Views: 24.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/companies/3" for 127.0.0.1 at 2011-04-30 17:22:24 -0600
+  Processing by CompaniesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "company"=>{"name"=>"Balihoo", "ceo"=>"Pete Gombert"}, "commit"=>"Update Company", "id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "companies" SET "ceo" = 'Pete Gombert', "updated_at" = '2011-04-30 23:22:24.514248' WHERE "companies"."id" = 3[0m
+Redirected to http://localhost:3000/companies/3
+Completed 302 Found in 68ms
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 17:22:24 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 32ms (Views: 18.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:22:27 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 17:22:29 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 61ms (Views: 18.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/3/financials/new" for 127.0.0.1 at 2011-04-30 17:22:30 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered financials/new.html.erb within layouts/application (5.7ms)
+Completed   in 66ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"financials", :company_id=>#<Company id: 3, name: "Balihoo", founded: nil, address: nil, phone: nil, ceo: "Pete Gombert", cfo: nil, president: nil, website: nil, headcount: nil, created_at: "2011-04-30 22:26:35", updated_at: "2011-04-30 23:22:24">}):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => company_financial_path(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__621025458767492398_2163691820__652936560184628731'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 17:22:35 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 62ms (Views: 48.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 17:34:58 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 36ms (Views: 20.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 17:35:45 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:35:49 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.9ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 123ms (Views: 50.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:35:50 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (31.8ms)
+Completed   in 49ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x00000101145ff8>:0x000001010b5868>):
+    12: </table>
+    13: 
+    14: <br />
+    15: <%= link_to 'Add Financial Data', new_company_financial(@company) %><br />
+    16: 
+    17: 
+    18: <br />
+  app/views/companies/show.html.erb:15:in `_app_views_companies_show_html_erb___1541501680232917799_2156106920__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:36:05 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 30ms (Views: 20.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:36:27 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (3.7ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 66ms (Views: 53.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:36:28 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 33ms (Views: 20.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/new_company_financial(@company)" for 127.0.0.1 at 2011-04-30 17:36:29 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"new_company_financial(@company)"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 0 LIMIT 1[0m
+Completed   in 42ms
+
+ActiveRecord::RecordNotFound (Couldn't find Company with ID=new_company_financial(@company)):
+  app/controllers/companies_controller.rb:8:in `show'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:36:45 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.9ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:36:46 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.7ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (21.9ms)
+Completed   in 75ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x000001015e7660>:0x000001015e5388>):
+    12: </table>
+    13: 
+    14: <br />
+    15: <%= link_to 'Add Financial Data', new_company_financial(@company) %><br />
+    16: 
+    17: 
+    18: <br />
+  app/views/companies/show.html.erb:15:in `_app_views_companies_show_html_erb___1541501680232917799_2158959500__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 17:38:08 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (3.1ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 61ms (Views: 48.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:38:10 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 31ms (Views: 18.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 17:38:11 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/new.html.erb within layouts/application (12.6ms)
+Completed   in 80ms
+
+ActionView::Template::Error (undefined method `company_financials' for #<#<Class:0x00000101412ab0>:0x0000010140fe28>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => company_financials(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2157997020__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:38:12 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 35ms (Views: 18.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:38:34 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 59ms (Views: 46.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 17:38:36 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/new.html.erb within layouts/application (12.2ms)
+Completed   in 70ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x000001015ac100>:0x000001015a98d8>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => new_company_financial(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2158837140__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 17:40:29 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.7ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 58ms (Views: 48.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:45:31 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 42ms (Views: 21.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 17:45:33 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/new.html.erb within layouts/application (12.8ms)
+Completed   in 44ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x00000100feca80>:0x00000100fea820>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => new_company_financial(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2155825000__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:45:36 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 36ms (Views: 21.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 17:45:37 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (2.4ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 66ms (Views: 53.7ms | ActiveRecord: 2.4ms)
+  [1m[36mCompany Load (2.5ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" LIMIT 1
+  [1m[36mCompany Load (27.0ms)[0m  [1mSELECT "companies".* FROM "companies" LIMIT 1[0m
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCompany Load (0.7ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."name" = 'CradlePoint'
+  [1m[36mCompany Load (0.8ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."name" = 'CradlePoint'[0m
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:49:53 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.8ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 36ms (Views: 22.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:50:53 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 34ms (Views: 18.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:51:26 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 31ms (Views: 18.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:52:44 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 59ms (Views: 18.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:52:48 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 65ms (Views: 21.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:52:52 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 66ms (Views: 49.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:53:10 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 59ms (Views: 46.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:53:45 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 58ms (Views: 45.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 17:53:48 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 31ms (Views: 21.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:53:50 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 31ms (Views: 18.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 17:53:52 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/new.html.erb within layouts/application (15.9ms)
+Completed   in 84ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x000001014cda68>:0x000001014c2988>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => new_company_financial(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2158361660__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:53:52 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 68ms (Views: 21.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 17:54:17 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/new.html.erb within layouts/application (16.5ms)
+Completed   in 82ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x000001015e6d00>:0x000001015e45a0>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => new_company_financial(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2158957240__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:57:08 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 67ms (Views: 52.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 17:57:10 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (5.2ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 6.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:57:26 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 60ms (Views: 47.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 17:57:27 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (7.7ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 6.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:57:29 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 61ms (Views: 18.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:57:53 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (46.2ms)
+Completed   in 64ms
+
+ActionView::Template::Error (undefined method `new_company_financials_path' for #<#<Class:0x00000100ecb8b8>:0x00000100ec7fd8>):
+    12: </table>
+    13: 
+    14: <br />
+    15: <%= link_to 'Add Financial Data', new_company_financials_path(@company) %><br />
+    16: 
+    17: 
+    18: <br />
+  app/views/companies/show.html.erb:15:in `_app_views_companies_show_html_erb___1541501680232917799_2155227360__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 17:57:55 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 30ms (Views: 20.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 17:58:51 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.9ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 59ms (Views: 20.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 17:58:52 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (33.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 65ms (Views: 18.8ms | ActiveRecord: 33.9ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 17:58:53 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (5.1ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 6.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:00:51 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 61ms (Views: 18.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:00:58 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (5.3ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 21ms (Views: 6.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:00:59 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 32ms (Views: 18.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:04:53 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (54.7ms)
+Completed   in 72ms
+
+ActionView::Template::Error (undefined method `new_company_financials_path' for #<#<Class:0x00000100e037f0>:0x00000100e00230>):
+    12: </table>
+    13: 
+    14: <br />
+    15: <%= link_to 'Add Financial Data', new_company_financials_path(@company) %><br />
+    16: 
+    17: 
+    18: <br />
+  app/views/companies/show.html.erb:15:in `_app_views_companies_show_html_erb___1541501680232917799_2154813700__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:05:07 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 65ms (Views: 49.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:05:10 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (5.2ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:06:25 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mFinancial Load (5.3ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 47ms (Views: 6.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:06:26 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 61ms (Views: 47.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:06:26 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 37ms (Views: 18.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:06:27 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (5.5ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 21ms (Views: 6.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:06:29 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 60ms (Views: 47.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:06:59 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (18.3ms)
+Completed   in 35ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x00000100f31528>:0x00000100f2ec88>):
+    12: </table>
+    13: 
+    14: <br />
+    15: <%= link_to 'Add Financial Data', new_company_financial(@company) %><br />
+    16: 
+    17: 
+    18: <br />
+  app/views/companies/show.html.erb:15:in `_app_views_companies_show_html_erb___1541501680232917799_2155440400__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.0ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:07:12 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/new.html.erb within layouts/application (16.0ms)
+Completed   in 48ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x00000100f1ab70>:0x00000100f185a0>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => new_company_financial(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2155394540__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 18:07:44 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 29ms (Views: 19.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 18:07:46 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 60ms (Views: 49.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:07:47 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.8ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 65ms (Views: 50.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:07:49 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/new.html.erb within layouts/application (41.1ms)
+Completed   in 71ms
+
+ActionView::Template::Error (undefined method `new_company_financial' for #<#<Class:0x00000100e6ea28>:0x00000100e6b878>):
+    1: <h1>New Financial</h1>
+    2: 
+    3: <%= form_for @financial, :url => new_company_financial(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+  app/views/financials/new.html.erb:3:in `_app_views_financials_new_html_erb__4058582652551176157_2155040060__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:07:50 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 31ms (Views: 18.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:11:24 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 31ms (Views: 18.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:11:26 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (61.0ms)
+Rendered financials/new.html.erb within layouts/application (127.3ms)
+Completed 200 OK in 159ms (Views: 131.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:11:28 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 36ms (Views: 19.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:11:30 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.2ms)
+Rendered financials/new.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 123ms (Views: 66.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:11:32 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 37ms (Views: 20.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:11:33 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (35.8ms)
+Rendered financials/new.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 135ms (Views: 70.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:12:05 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"10000", "cogs"=>"5000", "income_commentary"=>"Here"}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (10000, 5000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here', NULL, '2011-05-01', NULL, '2011-05-01 00:12:05.972003', '2011-05-01 00:12:05.972003')[0m
+Completed   in 103ms
+
+NoMethodError (undefined method `show_company_path' for #<FinancialsController:0x00000101455a68>):
+  app/controllers/financials_controller.rb:17:in `create'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:13:08 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.6ms)
+Rendered financials/new.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 102ms (Views: 72.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:13:09 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.0ms)
+Rendered financials/new.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 93ms (Views: 67.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:13:17 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"50000", "cogs"=>"10000", "income_commentary"=>"Here"}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[35mCompany Load (1.5ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (50000, 10000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here', NULL, '2011-05-01', NULL, '2011-05-01 00:13:17.955140', '2011-05-01 00:13:17.955140')[0m
+Completed   in 134ms
+
+ActionController::RoutingError (No route matches {:action=>"show", :controller=>"financials", :company_id=>#<Company id: 2, name: "CradlePoint", founded: nil, address: nil, phone: nil, ceo: "Pat Sewall", cfo: nil, president: nil, website: nil, headcount: nil, created_at: "2011-04-30 21:50:49", updated_at: "2011-04-30 21:55:19">}):
+  app/controllers/financials_controller.rb:17:in `create'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:14:26 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.0ms)
+Rendered financials/new.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 102ms (Views: 41.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:14:28 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"50000", "cogs"=>"10000", "income_commentary"=>"Here"}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (50000, 10000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here', NULL, '2011-05-01', NULL, '2011-05-01 00:14:28.768779', '2011-05-01 00:14:28.768779')
+Completed   in 135ms
+
+NoMethodError (undefined method `company_financial_index' for #<FinancialsController:0x00000100deba88>):
+  app/controllers/financials_controller.rb:17:in `create'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:14:29 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.3ms)
+Rendered financials/new.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 94ms (Views: 38.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:16:08 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (38.6ms)
+Rendered financials/new.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 136ms (Views: 73.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:16:13 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"10000", "cogs"=>"3000", "income_commentary"=>"Here."}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (10000, 3000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here.', NULL, '2011-05-01', NULL, '2011-05-01 00:16:13.983020', '2011-05-01 00:16:13.983020')
+Completed   in 95ms
+
+NoMethodError (undefined method `company_financials' for #<FinancialsController:0x00000100fe0b18>):
+  app/controllers/financials_controller.rb:17:in `create'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.4ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.2ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:16:23 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (6.9ms)
+Rendered financials/new.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 107ms (Views: 78.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:16:24 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"10000", "cogs"=>"3000", "income_commentary"=>"Here."}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (10000, 3000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here.', NULL, '2011-05-01', NULL, '2011-05-01 00:16:24.561635', '2011-05-01 00:16:24.561635')[0m
+Redirected to http://localhost:3000/companies/2/financials
+Completed 302 Found in 128ms
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:16:24 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mFinancial Load (12.9ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 6.6ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:19:10 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (14.2ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 6.8ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:19:36 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mFinancial Load (13.1ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (39.5ms)
+Completed   in 64ms
+
+ActionView::Template::Error (undefined method `period' for #<Array:0x00000100ece658>):
+    6: 		<th>Month</th>
+    7: 	</tr>
+    8: 	<tr>
+    9: 		<td><%= @financial.period.year %></td>
+    10: 		<td></td>
+    11: 	</tr>
+    12: </table>
+  app/views/financials/index.html.erb:9:in `_app_views_financials_index_html_erb__2045539648167931673_2155223440__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:20:07 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (45.8ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+ERROR: compiling _app_views_financials_index_html_erb__2045539648167931673_2158502940__3003043499537725238 RAISED /Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:15: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:17: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_financials_index_html_erb__2045539648167931673_2158502940__3003043499537725238(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "financials/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Index of all financials</h1>
+
+<table>
+	<tr>
+		<th>Year</th>
+		<th>Month</th>
+	</tr>
+');@output_buffer.append_if_string= 	 @financial.each do |f| 
+@output_buffer.safe_concat('	<tr>
+		<td>');@output_buffer.append= ( f.year );@output_buffer.safe_concat('</td>
+		<td></td>
+	</tr>
+</table>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:435:in `_run__2346223005958386592__process_action__2660952821365000890__callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered financials/index.html.erb within layouts/application (0.8ms)
+Completed   in 60ms
+
+ActionView::Template::Error (/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:15: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:17: syntax error, unexpected $end, expecting keyword_end):
+    12: 	</tr>
+    13: </table>
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.7ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:20:23 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mFinancial Load (44.8ms)[0m  SELECT "financials".* FROM "financials"
+ERROR: compiling _app_views_financials_index_html_erb__2045539648167931673_2158395560__3003043499537725238 RAISED /Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:15: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:17: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_financials_index_html_erb__2045539648167931673_2158395560__3003043499537725238(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "financials/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Index of all financials</h1>
+
+<table>
+	<tr>
+		<th>Year</th>
+		<th>Month</th>
+	</tr>
+');@output_buffer.append_if_string= 	 @financial.each do |f| 
+@output_buffer.safe_concat('	<tr>
+		<td>');@output_buffer.append= ( f.year );@output_buffer.safe_concat('</td>
+		<td></td>
+	</tr>
+</table>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:435:in `_run__2346223005958386592__process_action__2660952821365000890__callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered financials/index.html.erb within layouts/application (0.8ms)
+Completed   in 57ms
+
+ActionView::Template::Error (/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:15: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:17: syntax error, unexpected $end, expecting keyword_end):
+    12: 	</tr>
+    13: </table>
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.9ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:20:36 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (42.6ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (22.9ms)
+Completed   in 77ms
+
+ActionView::Template::Error (undefined method `year' for #<Financial:0x0000010148ba00>):
+    7: 	</tr>
+    8: 	<% @financial.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.year %></td>
+    11: 		<td></td>
+    12: 	</tr>
+    13: 	<% end %>
+  app/views/financials/index.html.erb:10:in `block in _app_views_financials_index_html_erb__2045539648167931673_2158224240__3003043499537725238'
+  app/views/financials/index.html.erb:8:in `each'
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2158224240__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (32.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (37.5ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:21:07 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.1ms)
+Rendered financials/new.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 104ms (Views: 75.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:21:09 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"10000", "cogs"=>"3000", "income_commentary"=>"Here."}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (10000, 3000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here.', NULL, '2011-05-01', NULL, '2011-05-01 00:21:09.456195', '2011-05-01 00:21:09.456195')
+Redirected to http://localhost:3000/companies/2/financials
+Completed 302 Found in 128ms
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:21:09 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (43.8ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (22.5ms)
+Completed   in 90ms
+
+ActionView::Template::Error (undefined method `year' for #<Financial:0x000001015a9590>):
+    7: 	</tr>
+    8: 	<% @financial.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.year %></td>
+    11: 		<td></td>
+    12: 	</tr>
+    13: 	<% end %>
+  app/views/financials/index.html.erb:10:in `block in _app_views_financials_index_html_erb__2045539648167931673_2158524400__3003043499537725238'
+  app/views/financials/index.html.erb:8:in `each'
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2158524400__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.7ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:21:53 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (46.8ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (24.7ms)
+Completed   in 98ms
+
+ActionView::Template::Error (undefined method `year' for #<Financial:0x0000010160e198>):
+    7: 	</tr>
+    8: 	<% @financial.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.year %></td>
+    11: 		<td><%= f.month %></td>
+    12: 	</tr>
+    13: 	<% end %>
+  app/views/financials/index.html.erb:10:in `block in _app_views_financials_index_html_erb__2045539648167931673_2158970960__3003043499537725238'
+  app/views/financials/index.html.erb:8:in `each'
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2158970960__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.8ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:22:12 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (16.9ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 133ms (Views: 61.8ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:22:47 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (17.1ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (43.9ms)
+Completed   in 121ms
+
+ActionView::Template::Error (undefined method `period' for #<Array:0x00000100fc0278>):
+    5: 		<th>Year</th>
+    6: 		<th>Month</th>
+    7: 	</tr>
+    8: 	<% @financial.period.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.year %></td>
+    11: 		<td><%= f.month	%></td>
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2155703760__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.4ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.6ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:23:02 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (48.0ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (24.3ms)
+Completed   in 100ms
+
+ActionView::Template::Error (undefined method `year' for #<Financial:0x0000010147eaf8>):
+    7: 	</tr>
+    8: 	<% @financial.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.year %></td>
+    11: 		<td><%= f.month	%></td>
+    12: 	</tr>
+    13: 	<% end %>
+  app/views/financials/index.html.erb:10:in `block in _app_views_financials_index_html_erb__2045539648167931673_2158209240__3003043499537725238'
+  app/views/financials/index.html.erb:8:in `each'
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2158209240__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (46.6ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:23:11 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (44.2ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 93ms (Views: 29.0ms | ActiveRecord: 45.0ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:23:40 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (43.4ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 93ms (Views: 29.6ms | ActiveRecord: 44.3ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:25:33 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (50.1ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 103ms (Views: 32.5ms | ActiveRecord: 51.0ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:29:04 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (15.2ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (55.5ms)
+Completed 200 OK in 95ms (Views: 59.6ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:29:11 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.3ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (16.3ms)[0m  SELECT "financials".* FROM "financials"
+ERROR: compiling _app_views_financials_index_html_erb__2045539648167931673_2155602280__3003043499537725238 RAISED /Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:8: syntax error, unexpected keyword_do, expecting keyword_end
+');@output_buffer.append_if_string= 	 @financial do |f| 
+                                    	              ^
+/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_financials_index_html_erb__2045539648167931673_2155602280__3003043499537725238(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "financials/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Index of all financials</h1>
+
+<table>
+	<tr>
+		<th>Year</th>
+		<th>Month</th>
+	</tr>
+');@output_buffer.append_if_string= 	 @financial do |f| 
+@output_buffer.safe_concat('	<tr>
+		<td>');@output_buffer.append= ( f.period.year );@output_buffer.safe_concat('</td>
+		<td>');@output_buffer.append= ( f.period.month	);@output_buffer.safe_concat('</td>
+		<td>');@output_buffer.append= ( f.revenue );@output_buffer.safe_concat('</td>
+	</tr>
+');	 end 
+@output_buffer.safe_concat('</table>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `module_eval'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:255:in `compile'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `block in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:435:in `_run__2346223005958386592__process_action__2660952821365000890__callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `block in action'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/Keller/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered financials/index.html.erb within layouts/application (1.0ms)
+Completed   in 77ms
+
+ActionView::Template::Error (/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:8: syntax error, unexpected keyword_do, expecting keyword_end
+');@output_buffer.append_if_string= 	 @financial do |f| 
+                                    	              ^
+/Users/Keller/rails_projects/tracker/app/views/financials/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting $end):
+    5: 		<th>Year</th>
+    6: 		<th>Month</th>
+    7: 	</tr>
+    8: 	<% @financial do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.period.year %></td>
+    11: 		<td><%= f.period.month	%></td>
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (54.0ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:29:20 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (43.1ms)[0m  SELECT "financials".* FROM "financials"
+Rendered financials/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 92ms (Views: 29.1ms | ActiveRecord: 44.0ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:31:16 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mFinancial Load (15.0ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+Rendered financials/index.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 85ms (Views: 61.7ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:32:43 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+Completed   in 0ms
+
+NoMethodError (undefined method `financials' for nil:NilClass):
+  app/controllers/financials_controller.rb:4:in `index'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:33:34 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.2ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 39ms (Views: 6.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 18:33:39 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:33:41 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 61ms (Views: 47.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:33:43 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.1ms)
+Rendered financials/new.html.erb within layouts/application (65.4ms)
+Completed 200 OK in 95ms (Views: 69.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:33:52 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"100000", "cogs"=>"2000", "income_commentary"=>"Here it is."}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (100000, 2000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Here it is.', NULL, '2011-05-01', NULL, '2011-05-01 00:33:52.307844', '2011-05-01 00:33:52.307844')
+Redirected to http://localhost:3000/companies/2/financials
+Completed 302 Found in 140ms
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:33:52 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.2ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 6.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:34:12 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 6.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:34:40 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.4ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 8.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:35:00 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.2ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (0.7ms)
+Completed   in 37ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    5: 		<th>Year</th>
+    6: 		<th>Month</th>
+    7: 	</tr>
+    8: 	<% @financials.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.period.year %></td>
+    11: 		<td><%= f.period.month	%></td>
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2155137680__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:35:19 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.2ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 6.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:38:28 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.2ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (1.4ms)
+Completed   in 74ms
+
+ActionView::Template::Error (undefined method `financial' for #<Company:0x000001014f54c8>):
+    5: 		<th>Year</th>
+    6: 		<th>Month</th>
+    7: 	</tr>
+    8: 	<% @company.financial.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.period.year %></td>
+    11: 		<td><%= f.period.month	%></td>
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2155788120__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:38:33 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 6.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:38:42 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 72ms (Views: 7.3ms | ActiveRecord: 1.1ms)
+  [1m[36mCompany Load (1.4ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCompany Load (0.7ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mCompany Load (0.7ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mCompany Load (0.7ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:39:44 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 7.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 18:39:54 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.7ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 58ms (Views: 48.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:40:02 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 34ms (Views: 19.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:40:08 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (5.7ms)
+Rendered financials/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 104ms (Views: 42.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:40:10 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 32ms (Views: 18.5ms | ActiveRecord: 0.9ms)
+  [1m[36mFinancial Load (10.4ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+  [1m[35mFinancial Load (15.8ms)[0m  SELECT "financials".* FROM "financials"
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 18:42:40 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:42:42 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 33ms (Views: 20.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:42:44 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Completed   in 24ms
+
+NoMethodError (undefined method `Financial' for #<Company:0x00000101491388>):
+  app/controllers/financials_controller.rb:9:in `new'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 18:43:00 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:43:01 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 36ms (Views: 21.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:43:02 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (40.4ms)
+Rendered financials/new.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 142ms (Views: 62.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:43:05 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 32ms (Views: 18.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:43:06 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.1ms)
+Rendered financials/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 96ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:43:14 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"20000", "cogs"=>"10000", "income_commentary"=>"Her is the first?"}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (20000, 10000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Her is the first?', NULL, '2011-05-01', NULL, '2011-05-01 00:43:14.457503', '2011-05-01 00:43:14.457503')
+Redirected to http://localhost:3000/companies/2/financials
+Completed 302 Found in 101ms
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:43:14 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 69ms (Views: 6.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:43:17 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 76ms (Views: 8.2ms | ActiveRecord: 1.2ms)
+  [1m[36mFinancial Load (11.9ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+  [1m[35mFinancial Load (12.7ms)[0m  SELECT "financials".* FROM "financials"
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:46:17 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.2ms)
+Rendered financials/new.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 126ms (Views: 46.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:46:19 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 66ms (Views: 20.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:46:21 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.8ms)
+Rendered financials/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 120ms (Views: 42.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:46:28 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"10000", "cogs"=>"4000", "income_commentary"=>""}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (10000, 4000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, '2011-05-01', NULL, '2011-05-01 00:46:28.859213', '2011-05-01 00:46:28.859213')[0m
+Redirected to http://localhost:3000/companies/2/financials
+Completed 302 Found in 144ms
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:46:28 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 6.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:46:30 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 66ms (Views: 6.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:47:31 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+Rendered financials/index.html.erb within layouts/application (0.7ms)
+Completed   in 5ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    5: 		<th>Year</th>
+    6: 		<th>Month</th>
+    7: 	</tr>
+    8: 	<% @financial.each do |f| %>
+    9: 	<tr>
+    10: 		<td><%= f.period.year %></td>
+    11: 		<td><%= f.period.month	%></td>
+  app/views/financials/index.html.erb:8:in `_app_views_financials_index_html_erb__2045539648167931673_2155326500__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:52:51 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 73ms (Views: 6.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:53:12 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Completed   in 58ms
+
+NoMethodError (undefined method `financial' for #<Company:0x000001015e1940>):
+  app/controllers/financials_controller.rb:4:in `index'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 18:53:15 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+  [1m[35mFinancial Load (0.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)
+Rendered financials/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 6.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pages/dashboard" for 127.0.0.1 at 2011-04-30 18:53:19 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/commentary" for 127.0.0.1 at 2011-04-30 18:53:21 -0600
+  Processing by PagesController#commentary as HTML
+Rendered pages/commentary.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 18:53:22 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (2.1ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 67ms (Views: 21.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:53:23 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 65ms (Views: 48.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:56:31 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 33ms (Views: 20.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 18:56:35 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:56:37 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 65ms (Views: 51.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:56:41 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.2ms)
+Rendered financials/new.html.erb within layouts/application (68.8ms)
+Completed 200 OK in 102ms (Views: 72.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:56:43 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 68ms (Views: 55.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:56:45 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.1ms)
+Rendered financials/new.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 95ms (Views: 68.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 18:56:46 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 83ms (Views: 70.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 18:59:15 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered financials/_form.html.erb (4.1ms)
+Rendered financials/new.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 95ms (Views: 68.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 19:07:35 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.3ms)
+Rendered financials/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 96ms (Views: 27.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/companies/2/financials" for 127.0.0.1 at 2011-04-30 19:07:42 -0600
+  Processing by FinancialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wC/YzSM+UhwNWelmLsMq+FMvAE0jnYFwE4tRmGB6sH8=", "financial"=>{"period(3i)"=>"1", "period(2i)"=>"5", "period(1i)"=>"2011", "revenue"=>"90000", "cogs"=>"10000", "income_commentary"=>"Gere is it."}, "commit"=>"Create Financial", "company_id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "financials" ("revenue", "cogs", "sga", "other_expense", "other_income", "interest_income", "interest_expense", "current_assets", "other_assets", "current_liabilties", "other_liabilities", "common_stock", "retained_earnings", "cash_in_ops", "cash_out_ops", "cash_investing", "cash_financing", "income_commentary", "balance_commentary", "period", "company_id", "created_at", "updated_at") VALUES (90000, 10000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Gere is it.', NULL, '2011-05-01', NULL, '2011-05-01 01:07:42.490401', '2011-05-01 01:07:42.490401')[0m
+Redirected to http://localhost:3000/companies/2/financials
+Completed 302 Found in 145ms
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 19:07:42 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (3.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 78ms (Views: 9.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 19:07:43 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 69ms (Views: 6.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 19:13:05 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 6.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 19:13:07 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (3.5ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 37ms (Views: 24.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:13:09 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 32ms (Views: 18.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:13:47 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (45.6ms)
+Completed   in 66ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"financials"}):
+    12: </table>
+    13: 
+    14: <br />
+    15: <%= link_to 'Financials', company_financial_path %>
+    16: <%= link_to 'Add Financial Data', new_company_financial_path(@company) %><br />
+    17: 
+    18: 
+  app/views/companies/show.html.erb:15:in `_app_views_companies_show_html_erb___1541501680232917799_2154624880__3003043499537725238'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:13:52 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 67ms (Views: 51.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:13:58 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 35ms (Views: 20.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2/financials/2" for 127.0.0.1 at 2011-04-30 19:14:00 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"2", "id"=>"2"}
+  [1m[36mFinancial Load (1.9ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE "financials"."id" = 2 LIMIT 1[0m
+Rendered financials/show.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 73ms (Views: 56.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:14:05 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 32ms (Views: 19.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 19:14:06 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+Completed   in 0ms
+
+NoMethodError (undefined method `financials' for nil:NilClass):
+  app/controllers/financials_controller.rb:7:in `new'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:14:07 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 36ms (Views: 20.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:14:16 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 35ms (Views: 21.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 19:14:18 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+Completed   in 0ms
+
+NoMethodError (undefined method `financials' for nil:NilClass):
+  app/controllers/financials_controller.rb:7:in `new'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:14:21 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 32ms (Views: 18.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:14:25 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (32.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 63ms (Views: 18.9ms | ActiveRecord: 32.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:14:58 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 35ms (Views: 20.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 19:14:59 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+Completed   in 0ms
+
+NoMethodError (undefined method `financials' for nil:NilClass):
+  app/controllers/financials_controller.rb:7:in `new'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:15:08 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 69ms (Views: 56.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 19:15:31 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 19:15:33 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.7ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 32ms (Views: 20.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 19:15:34 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 31ms (Views: 18.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/3/financials/new" for 127.0.0.1 at 2011-04-30 19:15:35 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.1ms)
+Rendered financials/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 94ms (Views: 12.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 19:15:36 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 80ms (Views: 21.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 19:15:37 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (2.2ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 70ms (Views: 57.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:15:38 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 31ms (Views: 18.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/new" for 127.0.0.1 at 2011-04-30 19:15:39 -0600
+  Processing by FinancialsController#new as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered financials/_form.html.erb (4.0ms)
+Rendered financials/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 95ms (Views: 12.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:15:41 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 33ms (Views: 19.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2/financials/2" for 127.0.0.1 at 2011-04-30 19:15:42 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"2", "id"=>"2"}
+  [1m[36mFinancial Load (3.5ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE "financials"."id" = 2 LIMIT 1[0m
+Rendered financials/show.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 153ms (Views: 31.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:15:45 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 62ms (Views: 19.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/2/financials/2" for 127.0.0.1 at 2011-04-30 19:15:47 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"2", "id"=>"2"}
+  [1m[36mFinancial Load (1.9ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE "financials"."id" = 2 LIMIT 1[0m
+Rendered financials/show.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 81ms (Views: 61.7ms | ActiveRecord: 1.9ms)
+  [1m[36mFinancial Load (43.6ms)[0m  [1mSELECT "financials".* FROM "financials"[0m
+  [1m[35mFinancial Load (15.2ms)[0m  SELECT "financials".* FROM "financials"
+
+
+Started GET "/companies/2/financials/2" for 127.0.0.1 at 2011-04-30 19:17:38 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"2", "id"=>"2"}
+  [1m[35mFinancial Load (31.2ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 2 LIMIT 1
+Rendered financials/show.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 75ms (Views: 28.4ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:18:51 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 62ms (Views: 19.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials/2" for 127.0.0.1 at 2011-04-30 19:18:55 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"2", "id"=>"2"}
+  [1m[35mFinancial Load (32.0ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 2 LIMIT 1
+Rendered financials/show.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 76ms (Views: 29.0ms | ActiveRecord: 32.0ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 19:18:56 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 69ms (Views: 52.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 19:18:59 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.7ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 30ms (Views: 20.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 19:19:00 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 62ms (Views: 18.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/3/financials/3" for 127.0.0.1 at 2011-04-30 19:19:01 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"3", "id"=>"3"}
+  [1m[35mFinancial Load (33.1ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 3 LIMIT 1
+Rendered financials/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 76ms (Views: 28.1ms | ActiveRecord: 33.1ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 19:19:05 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 62ms (Views: 49.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/3/financials/3" for 127.0.0.1 at 2011-04-30 19:19:14 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"3", "id"=>"3"}
+  [1m[35mFinancial Load (1.9ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 3 LIMIT 1
+Rendered financials/show.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 75ms (Views: 58.2ms | ActiveRecord: 1.9ms)

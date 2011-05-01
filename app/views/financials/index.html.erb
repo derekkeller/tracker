@@ -1,2 +1,15 @@
 <h1>Index of all financials</h1>
 
+<table>
+	<tr>
+		<th>Year</th>
+		<th>Month</th>
+	</tr>
+	<% @financial.each do |f| %>
+	<tr>
+		<td><%= f.period.year %></td>
+		<td><%= f.period.month	%></td>
+		<td><%= f.revenue %></td>
+	</tr>
+	<% end %>
+</table>

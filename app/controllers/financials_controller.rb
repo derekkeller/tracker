@@ -1,11 +1,11 @@
 class FinancialsController < ApplicationController
-  def index
-    @financial = Financial.all
-  end
 
   def new
+    # @company = Company.find(params[:company_id])
+    # @financial = @company.financials.build
     @company = Company.find(params[:company_id])
-    @financial = Financial.new
+    @financial = @company.financials.new
+
   end
 
   def create
@@ -14,7 +14,7 @@ class FinancialsController < ApplicationController
     @financial = Financial.new(params[:financial])
 
     if @financial.save
-      redirect_to show_company_path(@company)
+      redirect_to company_financials_path(@company)
     else
       render :new
     end
@@ -35,6 +35,11 @@ class FinancialsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def index
+    @company = Company.find(params[:company_id])
+    @financial = @company.financials.all
   end
 
   def destroy
