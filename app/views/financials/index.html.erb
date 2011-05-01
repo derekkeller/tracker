@@ -15,7 +15,8 @@
 		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
 		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
 				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
-
+		<td><%= link_to 'Edit', edit_company_financial_path(@company,f) %></td>
+		<td><%= link_to 'Show', company_financial_path(@company,f) %></td>
 	</tr>
 	<% end %>
 </table>

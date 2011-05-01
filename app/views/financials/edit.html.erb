@@ -1,0 +1,7 @@
+<h1><%= @company.name %></h1>
+
+<%= form_for @financial, :url => company_financials_path(@company) do |f| -%>
+	<%= render :partial => 'form', :object => f %>
+<% end -%>
+
+<%= link_to 'Back', company_financials_path(@company) %>

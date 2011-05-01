@@ -10034,3 +10034,544 @@ Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 20:37:15 -0600
   [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
 Rendered companies/show.html.erb within layouts/application (14.1ms)
 Completed 200 OK in 31ms (Views: 18.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 20:41:33 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 61ms (Views: 47.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:41:36 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (31.9ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (69.6ms)
+Completed   in 138ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"financials", :company_id=>#<Company id: 3, name: "Balihoo", founded: nil, address: nil, phone: nil, ceo: "Pete Gombert", cfo: nil, president: nil, website: nil, headcount: nil, created_at: "2011-04-30 22:26:35", updated_at: "2011-04-30 23:22:24">}):
+    15: 		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
+    16: 		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
+    17: 				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
+    18: 		<td><%= link_to 'Edit', edit_company_financial_path(@company) %>
+    19: 	</tr>
+    20: 	<% end %>
+    21: </table>
+  app/views/financials/index.html.erb:18:in `block in _app_views_financials_index_html_erb___4137263355515339761_2172984120__500775547480951182'
+  app/views/financials/index.html.erb:10:in `each'
+  app/views/financials/index.html.erb:10:in `_app_views_financials_index_html_erb___4137263355515339761_2172984120__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:42:46 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.9ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (68.8ms)
+Completed   in 111ms
+
+ActionView::Template::Error (undefined method `edit_company_financial' for #<#<Class:0x00000100fdf7b8>:0x00000100fdb690>):
+    15: 		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
+    16: 		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
+    17: 				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
+    18: 		<td><%= link_to 'Edit', edit_company_financial(@company) %>
+    19: 	</tr>
+    20: 	<% end %>
+    21: </table>
+  app/views/financials/index.html.erb:18:in `block in _app_views_financials_index_html_erb___4137263355515339761_2155792640__500775547480951182'
+  app/views/financials/index.html.erb:10:in `each'
+  app/views/financials/index.html.erb:10:in `_app_views_financials_index_html_erb___4137263355515339761_2155792640__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 20:42:47 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 187ms (Views: 171.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 20:42:49 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 31ms (Views: 18.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:42:50 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.5ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (62.6ms)
+Completed   in 101ms
+
+ActionView::Template::Error (undefined method `edit_company_financial' for #<#<Class:0x00000100fb74c0>:0x00000100fb1de0>):
+    15: 		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
+    16: 		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
+    17: 				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
+    18: 		<td><%= link_to 'Edit', edit_company_financial(@company) %>
+    19: 	</tr>
+    20: 	<% end %>
+    21: </table>
+  app/views/financials/index.html.erb:18:in `block in _app_views_financials_index_html_erb___4137263355515339761_2155707460__500775547480951182'
+  app/views/financials/index.html.erb:10:in `each'
+  app/views/financials/index.html.erb:10:in `_app_views_financials_index_html_erb___4137263355515339761_2155707460__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:43:03 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (30.3ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.7ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (56.4ms)
+Completed   in 134ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"financials", :company_id=>#<Company id: 3, name: "Balihoo", founded: nil, address: nil, phone: nil, ceo: "Pete Gombert", cfo: nil, president: nil, website: nil, headcount: nil, created_at: "2011-04-30 22:26:35", updated_at: "2011-04-30 23:22:24">}):
+    15: 		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
+    16: 		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
+    17: 				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
+    18: 		<td><%= link_to 'Edit', edit_company_financial_path(@company) %></td>
+    19: 	</tr>
+    20: 	<% end %>
+    21: </table>
+  app/views/financials/index.html.erb:18:in `block in _app_views_financials_index_html_erb___4137263355515339761_2157833780__500775547480951182'
+  app/views/financials/index.html.erb:10:in `each'
+  app/views/financials/index.html.erb:10:in `_app_views_financials_index_html_erb___4137263355515339761_2157833780__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.9ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 20:54:03 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 30ms (Views: 20.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2011-04-30 20:54:04 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (2.1ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 31ms (Views: 21.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 20:54:06 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (1.3ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 75ms (Views: 22.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:54:07 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mFinancial Load (5.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)[0m
+Rendered financials/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 105ms (Views: 30.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/companies/3/financials/14/edit" for 127.0.0.1 at 2011-04-30 20:54:09 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"14"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Completed   in 51ms
+
+NoMethodError (undefined method `financial' for #<Company:0x00000103049b70>):
+  app/controllers/financials_controller.rb:28:in `edit'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:54:10 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.4ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 95ms (Views: 30.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:55:08 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (5.0ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 99ms (Views: 59.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/companies/3/financials/14/edit" for 127.0.0.1 at 2011-04-30 20:55:10 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"14"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (1.9ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 14 AND ("financials".company_id = 3) LIMIT 1
+Completed   in 71ms
+
+ActionView::MissingTemplate (Missing template financials/edit with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/Keller/rails_projects/tracker/app/views"):
+  
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:55:11 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (4.4ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 141ms (Views: 61.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:56:47 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (37.0ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 107ms (Views: 33.1ms | ActiveRecord: 38.0ms)
+
+
+Started GET "/companies/3/financials/14/edit" for 127.0.0.1 at 2011-04-30 20:56:48 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"14"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (2.0ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 14 AND ("financials".company_id = 3) LIMIT 1
+Rendered financials/_form.html.erb (0.8ms)
+Rendered financials/edit.html.erb within layouts/application (2.5ms)
+Completed   in 48ms
+
+ActionView::Template::Error (undefined method `label' for nil:NilClass):
+    1: 	<p>
+    2: 		<%= form.label :period %>
+    3: 		<%= form.date_select :period, :order => [:month, :year] %>
+    4: 	</p>
+    5: 	<p>
+  app/views/financials/_form.html.erb:2:in `_app_views_financials__form_html_erb___3877333703080898639_2155689840_3273232644769516340'
+  app/views/financials/edit.html.erb:3:in `_app_views_financials_edit_html_erb___4203591765444602841_2155721860__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.5ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.4ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (44.0ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:56:50 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (32.7ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 97ms (Views: 31.2ms | ActiveRecord: 33.7ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:57:42 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (4.6ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 149ms (Views: 76.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/companies/3/financials/14/edit" for 127.0.0.1 at 2011-04-30 20:57:43 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"14"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (2.0ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 14 AND ("financials".company_id = 3) LIMIT 1
+Rendered financials/edit.html.erb within layouts/application (18.7ms)
+Completed   in 93ms
+
+ActionView::Template::Error (undefined method `edit_company_financials_path' for #<#<Class:0x000001014a3970>:0x000001014a1300>):
+    1: <h1><%= @company.name %></h1>
+    2: 
+    3: <%= form_for @financial, :url => edit_company_financials_path(@company) do |f| -%>
+    4: 	<%= render :partial => 'form', :object => f %>
+    5: <% end -%>
+    6: 
+  app/views/financials/edit.html.erb:3:in `_app_views_financials_edit_html_erb___4203591765444602841_2158296420__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (30.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (35.6ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 20:57:44 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.3ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 95ms (Views: 59.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:00:56 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (2.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.7ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 115ms (Views: 35.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/companies/3/financials/14/edit" for 127.0.0.1 at 2011-04-30 21:00:57 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"14"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (2.1ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 14 AND ("financials".company_id = 3) LIMIT 1
+Rendered financials/_form.html.erb (8.7ms)
+Rendered financials/edit.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 120ms (Views: 44.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:00:59 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.4ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 125ms (Views: 59.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/companies/3/financials/16/edit" for 127.0.0.1 at 2011-04-30 21:01:04 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"16"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (1.9ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 16 AND ("financials".company_id = 3) LIMIT 1
+Rendered financials/_form.html.erb (3.9ms)
+Rendered financials/edit.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 105ms (Views: 34.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:01:08 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.4ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 100ms (Views: 63.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 21:01:10 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 59ms (Views: 46.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 21:01:12 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.9ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 34ms (Views: 23.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 21:01:28 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (30.7ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 62ms (Views: 18.8ms | ActiveRecord: 30.7ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:01:31 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[35mCompany Load (1.1ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mFinancial Load (4.4ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)[0m
+Rendered financials/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 123ms (Views: 35.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:02:07 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mFinancial Load (3.7ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)[0m
+Rendered financials/index.html.erb within layouts/application (56.1ms)
+Completed   in 130ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"financials", :company_id=>#<Company id: 3, name: "Balihoo", founded: nil, address: nil, phone: nil, ceo: "Pete Gombert", cfo: nil, president: nil, website: nil, headcount: nil, created_at: "2011-04-30 22:26:35", updated_at: "2011-04-30 23:22:24">}):
+    16: 		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
+    17: 				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
+    18: 		<td><%= link_to 'Edit', edit_company_financial_path(@company,f) %></td>
+    19: 		<td><%= link_to 'Show', company_financial_path(@company) %></td>
+    20: 	</tr>
+    21: 	<% end %>
+    22: </table>
+  app/views/financials/index.html.erb:19:in `block in _app_views_financials_index_html_erb___4137263355515339761_2157743440__500775547480951182'
+  app/views/financials/index.html.erb:10:in `each'
+  app/views/financials/index.html.erb:10:in `_app_views_financials_index_html_erb___4137263355515339761_2157743440__500775547480951182'
+
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/Keller/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:02:11 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[35mCompany Load (1.0ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mFinancial Load (49.5ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)[0m
+Rendered financials/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 129ms (Views: 38.4ms | ActiveRecord: 50.5ms)
+
+
+Started GET "/companies/3/financials/14" for 127.0.0.1 at 2011-04-30 21:02:13 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"3", "id"=>"14"}
+  [1m[35mFinancial Load (1.9ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 14 LIMIT 1
+Rendered financials/show.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 80ms (Views: 62.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:02:14 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.5ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (58.1ms)
+Completed 200 OK in 97ms (Views: 62.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/companies/3/financials/16" for 127.0.0.1 at 2011-04-30 21:02:16 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"3", "id"=>"16"}
+  [1m[36mFinancial Load (32.8ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE "financials"."id" = 16 LIMIT 1[0m
+Rendered financials/show.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 85ms (Views: 34.7ms | ActiveRecord: 32.8ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:02:17 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+  [1m[36mFinancial Load (3.4ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)[0m
+Rendered financials/index.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 138ms (Views: 65.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 21:03:28 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (1.8ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 33ms (Views: 23.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 21:03:29 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (31.5ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 62ms (Views: 18.6ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 21:03:32 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (2.3ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 35ms (Views: 21.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 21:03:47 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Rendered companies/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 32ms (Views: 19.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/2/financials" for 127.0.0.1 at 2011-04-30 21:03:49 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"2"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+  [1m[36mFinancial Load (0.3ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE ("financials".company_id = 2)[0m
+Rendered financials/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 69ms (Views: 7.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/companies/2" for 127.0.0.1 at 2011-04-30 21:03:51 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (1.4ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 34ms (Views: 20.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/companies" for 127.0.0.1 at 2011-04-30 21:03:52 -0600
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (1.8ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 32ms (Views: 22.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2011-04-30 21:03:53 -0600
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.9ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered companies/show.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 61ms (Views: 48.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:03:55 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (1.0ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (32.5ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 95ms (Views: 29.5ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/companies/3/financials/16/edit" for 127.0.0.1 at 2011-04-30 21:03:58 -0600
+  Processing by FinancialsController#edit as HTML
+  Parameters: {"company_id"=>"3", "id"=>"16"}
+  [1m[36mCompany Load (1.1ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (1.9ms)[0m  SELECT "financials".* FROM "financials" WHERE "financials"."id" = 16 AND ("financials".company_id = 3) LIMIT 1
+Rendered financials/_form.html.erb (4.0ms)
+Rendered financials/edit.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 148ms (Views: 69.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/companies/3/financials" for 127.0.0.1 at 2011-04-30 21:03:59 -0600
+  Processing by FinancialsController#index as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.9ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+  [1m[35mFinancial Load (3.6ms)[0m  SELECT "financials".* FROM "financials" WHERE ("financials".company_id = 3)
+Rendered financials/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 95ms (Views: 30.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/companies/3/financials/16" for 127.0.0.1 at 2011-04-30 21:04:00 -0600
+  Processing by FinancialsController#show as HTML
+  Parameters: {"company_id"=>"3", "id"=>"16"}
+  [1m[36mFinancial Load (1.9ms)[0m  [1mSELECT "financials".* FROM "financials" WHERE "financials"."id" = 16 LIMIT 1[0m
+Rendered financials/show.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 74ms (Views: 29.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-30 21:39:01 -0600
+  Processing by PagesController#dashboard as HTML
+Rendered pages/dashboard.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)

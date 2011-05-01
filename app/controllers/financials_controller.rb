@@ -25,7 +25,7 @@ class FinancialsController < ApplicationController
 
   def edit
     @company = Company.find(params[:company_id])
-    @financial = @company.financial.find(params[:id])
+    @financial = @company.financials.find(params[:id])
     # Financial.find(params[:id])
   end
 
