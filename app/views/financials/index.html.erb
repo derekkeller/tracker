@@ -1,15 +1,24 @@
-<h1>Index of all financials</h1>
+<h1><%= @company.name %> | Financials</h1>
 
 <table>
 	<tr>
 		<th>Year</th>
 		<th>Month</th>
+		<th>Revenue</th>
+		<th>Edit</th>
 	</tr>
 	<% @financial.each do |f| %>
 	<tr>
 		<td><%= f.period.year %></td>
 		<td><%= f.period.month	%></td>
 		<td><%= f.revenue %></td>
+		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
+		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
+				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
+
 	</tr>
 	<% end %>
 </table>
+
+<br />
+<%= link_to "Back to #{@company.name}", company_path(@company) %>
