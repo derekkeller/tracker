@@ -5,21 +5,24 @@
 		<th>Year</th>
 		<th>Month</th>
 		<th>Revenue</th>
-		<th>Edit</th>
+		<th>Commentary</th>
+		<th></th>
 	</tr>
 	<% @financial.each do |f| %>
 	<tr>
 		<td><%= f.period.year %></td>
-		<td><%= f.period.month	%></td>
+		<td><%= f.period.month %></td>
 		<td><%= f.revenue %></td>
-		<!-- I pulled the ruby tags off the below, page was rendering error.. can't get the show or edit actions to work -->
-		<!-- <td> link_to 'Show', show_company_financial_path(@company) -->
-				 <!-- link_to 'Edit', edit_company_financial_path(@company) -->
-		<td><%= link_to 'Edit', edit_company_financial_path(@company,f) %></td>
-		<td><%= link_to 'Show', company_financial_path(@company,f) %></td>
+		<td><%= f.income_commentary %></td>
+		<td><%= link_to 'Edit', edit_company_financial_path(@company,f) %> | 
+				<%= link_to 'Show', company_financial_path(@company,f) %>
+		</td>
 	</tr>
 	<% end %>
 </table>
+
+<br />
+<%= link_to 'Add Financial Data', new_company_financial_path(@company) %>
 
 <br />
 <%= link_to "Back to #{@company.name}", company_path(@company) %>

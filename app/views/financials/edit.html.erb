@@ -1,6 +1,6 @@
 <h1><%= @company.name %></h1>
 
-<%= form_for @financial, :url => company_financials_path(@company) do |f| -%>
+<%= form_for @financial, :url => company_financial_path(@company) do |f| -%>
 	<%= render :partial => 'form', :object => f %>
 <% end -%>
 

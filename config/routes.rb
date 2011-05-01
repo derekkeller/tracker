@@ -2,15 +2,17 @@ Tracker::Application.routes.draw do
 
   resources :companies
   resources :financials
+  resources :pages
 
   resources :companies do
     resources :financials
   end
 
   get "pages/dashboard"
+  get "pages/dashboard_detail"
   get "pages/commentary"
 
-  root :to => 'pages#dashboard'
+  root :to => 'pages#index'
 
 
   # The priority is based upon order of creation:

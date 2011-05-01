@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110430171006) do
+ActiveRecord::Schema.define(:version => 20110501073650) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(:version => 20110430171006) do
     t.text     "balance_commentary"
     t.date     "period"
     t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

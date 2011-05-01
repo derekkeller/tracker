@@ -1,4 +1,4 @@
-<h1><%= @company.name %> | Details</h1>
+<h1><%= @company.name %></h1>
 
 <table class='company_detail'>
 	<tr>
@@ -13,9 +13,7 @@
 
 <br />
 
-<%= link_to 'Financials', company_financials_path(@company) %> | 
-<%= link_to 'Add Financial Data', new_company_financial_path(@company) %><br />
-
+<%= link_to 'Financials', company_financials_path(@company) %><br />
 
 <br />
 <%= link_to 'Edit', edit_company_path(@company) %><br />

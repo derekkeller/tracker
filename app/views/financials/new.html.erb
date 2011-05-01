@@ -1,4 +1,4 @@
-<h1>New Financial</h1>
+<h1><%= @company.name %> | New Financial</h1>
 
 <%= form_for @financial, :url => company_financials_path(@company) do |f| -%>
 	<%= render :partial => 'form', :object => f %>

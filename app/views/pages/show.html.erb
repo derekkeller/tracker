@@ -1,0 +1,39 @@
+<h1><%= @company.name %> | Dashboard</h1>
+
+<h4>Results For: <%= @company.financials.last.period.month %>-<%= @company.financials.last.period.year %></h4>
+
+<div class='financial_box'>
+	<h3>Income Statment</h3>
+	<table>
+		<tr>
+			<th>Revenue</th>
+			<td style='text-align:right'><%= number_to_currency(@company.financials.sum(:revenue), :precision => 0) %></td>
+		</tr>
+		<tr>
+			<th>COGS</th>
+			<td style='text-align:right'><%= number_to_currency(@company.financials.sum(:cogs), :precision => 0) %></td>
+		</tr>
+		<tr>
+			<th>Gross Margin</th>
+			<td><%= @gross_margin %></td>
+		</tr>
+	</table>
+</div>
+
+<div class='financial_box'>
+	<h3>Balance Sheet</h3>
+	<table>
+		<tr>
+			<th>Assets</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Current Assets</th>
+			<td style='text-align:right'><%= number_to_currency(@company.financials.sum(:current_assets), :precision => 0) %></td>
+		</tr>
+		<tr>
+			<th>Other Assets</th>
+			<td style='text-align:right'><%= number_to_currency(@company.financials.sum(:other_assets), :precision => 0) %></td>
+		</tr>
+	</table>
+</div>

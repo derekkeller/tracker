@@ -3,5 +3,5 @@
 
 Select a company to view dashboard:
 <% @company.each do |company| %>
-  <p><%= link_to company.name, pages_dashboard_path(company) %></p>
+  <p><%= link_to company.name, page_path(company) %></p>
 <% end %>
